@@ -7,9 +7,16 @@ public class OperacoesPFBusiness extends OperacoesBusiness {
 		System.out.println("Token gerado com sucesso");
 	}
 	
-	public void resgatar() {
+	public void resgatarParcial() {
 		System.out.println("Resgate parcial efetuado com sucesso");
 		System.out.println("Token gerado com sucesso");
 	}
 
+	public void exibirExtrato(boolean imprimirLogotipo, boolean imprimirRodape) {
+		super.exibirExtrato(imprimirLogotipo);
+		if ( imprimirRodape ) {
+			System.out.println("Rodapé do relatório");
+		}
+	}
+	
 }

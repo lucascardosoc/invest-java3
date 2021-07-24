@@ -1,6 +1,7 @@
 package br.com.fiap.investimento.test;
 
 import br.com.fiap.investimento.business.OperacoesBusiness;
+import br.com.fiap.investimento.business.OperacoesInstitucionaisBusiness;
 import br.com.fiap.investimento.business.OperacoesPFBusiness;
 import br.com.fiap.investimento.business.OperacoesPJBusiness;
 
@@ -13,14 +14,22 @@ public class OperacoesTest {
 //		System.out.println("");
 		
 		OperacoesPFBusiness opPf = new OperacoesPFBusiness();
-		opPf.aplicar();
-		opPf.estornar();
+		//opPf.aplicar();
+		//opPf.estornar();
+		opPf.resgatar();
 		System.out.println("");
 		
 		OperacoesPJBusiness opPj = new OperacoesPJBusiness();
-		opPj.aplicar();
-		opPj.encerrarInvestimento();
+		//opPj.aplicar();
+		//opPj.encerrarInvestimento();
+		opPj.resgatar();
 		System.out.println("");
+		
+		
+		OperacoesInstitucionaisBusiness opInst = new OperacoesInstitucionaisBusiness();
+		opInst.resgatar();
+		
+		
 		
 	}
 	

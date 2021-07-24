@@ -7,3 +7,39 @@ public class OperacoesPJBusiness extends OperacoesBusiness {
 	}
 	
 }
+
+
+
+
+/*
+imprimir, pdf, excel e txt
+
+PF
+	imprimir
+	pdf
+	excel
+	txt
+
+PJ
+	imprimir
+	pdf
+	excel
+	txt
+
+Instit
+	imprimir
+	pdf
+	excel
+	txt
+*/
+
+
+
+
+
+
+
+
+
+
+
