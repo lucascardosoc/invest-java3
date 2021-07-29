@@ -1,6 +1,5 @@
 package br.com.fiap.investimento.test;
 
-import br.com.fiap.investimento.business.OperacoesBusiness;
 import br.com.fiap.investimento.business.OperacoesInstitucionaisBusiness;
 import br.com.fiap.investimento.business.OperacoesPFBusiness;
 import br.com.fiap.investimento.business.OperacoesPJBusiness;

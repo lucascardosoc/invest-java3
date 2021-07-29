@@ -1,6 +1,5 @@
 package br.com.fiap.investimento.test;
 
-import br.com.fiap.investimento.model.InvestidorInstitucional;
 import br.com.fiap.investimento.model.InvestidorPF;
 
 public class InvestidorGeralTest {
