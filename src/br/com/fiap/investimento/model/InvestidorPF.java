@@ -39,7 +39,28 @@ public class InvestidorPF extends Investidor {
 	}
 
 	
-
+	@Override
+	public boolean equals(Object obj) {
+		boolean retorno = true;
+		
+		if ( obj instanceof InvestidorPF ) {
+			InvestidorPF investidorComparacao = (InvestidorPF) obj;
+			
+			if ( ! this.getNome().equals(investidorComparacao.getNome()) ) {
+				retorno = false;
+			}
+			
+			if ( this.getPatrimonio() != investidorComparacao.getPatrimonio() ) {
+				retorno = false;
+			}
+			
+			
+		} else {
+			retorno = false;
+		}
+			
+		return retorno;
+	}
 	
 	
 	
