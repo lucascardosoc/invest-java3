@@ -5,6 +5,18 @@ public class Fundo {
 	private int fundoId;
 	private String nomeFundo;
 	
+	
+	public Fundo() {
+		
+	}
+	
+	public Fundo(int fundoId, String nomeFundo) {
+		super();
+		this.fundoId = fundoId;
+		this.nomeFundo = nomeFundo;
+	}
+	
+	
 	public int getFundoId() {
 		return fundoId;
 	}

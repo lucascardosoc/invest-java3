@@ -1,6 +1,6 @@
 package br.com.fiap.investimento.model;
 
-public class InvestidorPF extends Investidor {
+public class InvestidorPF extends Investidor implements Comparable<InvestidorPF> {
 
 	private String cpf;
 
@@ -33,9 +33,13 @@ public class InvestidorPF extends Investidor {
 
 	@Override
 	public String toString() {
+		/*
 		return "InvestidorPF [getCpf()=" + getCpf() + ", getInvestidorId()=" + getInvestidorId() + ", getNome()="
 				+ getNome() + ", getPatrimonio()=" + getPatrimonio() + ", getPerfilRisco()=" + getPerfilRisco()
 				+ ", getDataAberturaConta()=" + getDataAberturaConta() + "]";
+				*/
+		
+		return getNome();
 	}
 
 	
@@ -63,7 +67,25 @@ public class InvestidorPF extends Investidor {
 	}
 	
 	
+	@Override
+	public int hashCode() {
+		return this.getInvestidorId();
+	}
+
+	@Override
+	public int compareTo(InvestidorPF o) {
+		int retorno = 0;
+		
+		if ( this.getNome().equals( o.getNome()) ) {
+			retorno = Double.compare(this.getPatrimonio(), o.getPatrimonio());
+		} else {
+			retorno = this.getNome().compareTo(o.getNome());
+		}
+		
+		return retorno;
+	}
 	
 	
 	
 }
+
