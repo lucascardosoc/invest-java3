@@ -4,39 +4,16 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import br.com.fiap.investimento.exceptions.DadoNaoAlteradoException;
+import br.com.fiap.investimento.exceptions.DadoNaoRemovidoException;
+import br.com.fiap.investimento.exceptions.DataBaseException;
 import br.com.fiap.investimento.model.InvestidorPF;
+import br.com.fiap.investimento.tools.DBTools;
 
-public class InvestidorPFDAO {
+public class InvestidorPFDAO implements GenericDAO<InvestidorPF, Integer> {
 
-	//entrada OK >> processamento OK >> saída OK
 	
-	// cadastrar - INSERT
-	public boolean cadastrar( InvestidorPF investidor ) {
-		// processamento - Comando SQL
-		return true;
-	}
-	
-	
-	// alterar - UPDATE
-	
-	// excluir - DELETE
-	
-	
-	
-	// consultar - SELECT BY ID 
-	public InvestidorPF consultarPorId(int id) {
-		// processamento
-		return new InvestidorPF();
-	}
-	
-	public InvestidorPF consultarPorCpf(String cpf) {
-		// processamento
-		return new InvestidorPF();
-	}
-	
-	
-	// listarTodos - SELECT ALL
-	public List<InvestidorPF> listarTodos() {
+	public List<InvestidorPF> listarTodos() throws DataBaseException {
 		
 		// Obtendo o Driver - Oracle / Mysql / SQLServer
 		// Abrindo a Conexao
@@ -55,5 +32,45 @@ public class InvestidorPFDAO {
 
 		// Fechando a conexao
 	}
+
+	
+	
+	@Override
+	public InvestidorPF consultarPorId(Integer chave) throws DataBaseException {
+		return null;
+	}
+
+	@Override
+	public Integer cadastrar(InvestidorPF entidade) throws DataBaseException  {
+		return null;
+	}
+
+	@Override
+	public void alterar(InvestidorPF entidade) throws DataBaseException, DadoNaoAlteradoException {
+		
+	}
+
+	@Override
+	public void excluir(Integer chave) throws DataBaseException, DadoNaoRemovidoException {
+		// Obtendo o Driver - Oracle / Mysql / SQLServer
+		// Abrindo a Conexao
+		// Preparando o comando SQL
+		// >>>> DELETE FROM TB_INVESTIDOR WHERE ID_INVESTIDOR = chave
+		// Executo o comando SQL
+		// Obtendo o retorno do SQL
+		// Retorno sucesso ou falha
+		
+		DBTools.obterConexao();
+		
+		if ( chave.intValue() == 0 || chave.intValue() == 100) {
+			throw new DadoNaoRemovidoException();
+		} 
+		
+		System.out.println("Investidor excluído com sucesso: " + chave);
+	}
+	
+	
+	
+	
 	
 }
