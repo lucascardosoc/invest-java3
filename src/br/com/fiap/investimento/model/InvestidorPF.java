@@ -3,6 +3,7 @@ package br.com.fiap.investimento.model;
 public class InvestidorPF extends Investidor implements Comparable<InvestidorPF> {
 
 	private String cpf;
+	private boolean ehAtivo;
 
 	public InvestidorPF() {
 		super();
@@ -14,6 +15,14 @@ public class InvestidorPF extends Investidor implements Comparable<InvestidorPF>
 		super.setPatrimonio(paramPatrimonio);
 	}
 	
+	public InvestidorPF(int investidorId, String nome) {
+		super(investidorId, nome, 0.0);
+	}
+	
+	public InvestidorPF(int investidorId, String nome, boolean ehAtivo) {
+		super(investidorId, nome, 0.0);
+		this.ehAtivo = ehAtivo;
+	}
 	
 	public InvestidorPF(int investidorId, String nome, double patrimonio) {
 		super(investidorId, nome, patrimonio);
@@ -31,17 +40,14 @@ public class InvestidorPF extends Investidor implements Comparable<InvestidorPF>
 		this.cpf = cpf;
 	}
 
-	@Override
-	public String toString() {
-		/*
-		return "InvestidorPF [getCpf()=" + getCpf() + ", getInvestidorId()=" + getInvestidorId() + ", getNome()="
-				+ getNome() + ", getPatrimonio()=" + getPatrimonio() + ", getPerfilRisco()=" + getPerfilRisco()
-				+ ", getDataAberturaConta()=" + getDataAberturaConta() + "]";
-				*/
-		
-		return getNome();
+	public boolean isEhAtivo() {
+		return ehAtivo;
 	}
 
+	public void setEhAtivo(boolean ehAtivo) {
+		this.ehAtivo = ehAtivo;
+	}
+	
 	
 	@Override
 	public boolean equals(Object obj) {
@@ -84,6 +90,15 @@ public class InvestidorPF extends Investidor implements Comparable<InvestidorPF>
 		
 		return retorno;
 	}
+
+	
+	@Override
+	public String toString() {
+		return "InvestidorPF [cpf=" + cpf + ", ehAtivo=" + ehAtivo + ", getInvestidorId()=" + getInvestidorId()
+				+ ", getNome()=" + getNome() + ", getPatrimonio()=" + getPatrimonio() + "]";
+	}
+
+	
 	
 	
 	

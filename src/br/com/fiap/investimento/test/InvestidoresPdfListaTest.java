@@ -8,11 +8,15 @@ public class InvestidoresPdfListaTest {
 
 	public static void main(String[] args) {
 
-		InvestidorPFDAO dao = new InvestidorPFDAO();
-		List<InvestidorPF> lista = dao.listarTodos();
-
-		for (InvestidorPF investidorPF : lista) {
-			System.out.println(investidorPF);
+		try {
+			InvestidorPFDAO dao = new InvestidorPFDAO();
+			List<InvestidorPF> lista = dao.listarTodos();
+	
+			for (InvestidorPF investidorPF : lista) {
+				System.out.println(investidorPF);
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
 		}
 
 	}

@@ -4,6 +4,7 @@ public class Fundo {
 
 	private int fundoId;
 	private String nomeFundo;
+	private boolean ehAberto;
 	
 	
 	public Fundo() {
@@ -15,6 +16,15 @@ public class Fundo {
 		this.fundoId = fundoId;
 		this.nomeFundo = nomeFundo;
 	}
+	
+	public Fundo(int fundoId, String nomeFundo, boolean ehAberto) {
+		super();
+		this.fundoId = fundoId;
+		this.nomeFundo = nomeFundo;
+		this.ehAberto = ehAberto;
+	}
+	
+	
 	
 	
 	public int getFundoId() {
@@ -29,12 +39,24 @@ public class Fundo {
 	public void setNomeFundo(String nomeFundo) {
 		this.nomeFundo = nomeFundo;
 	}
-	
+
+	public boolean isEhAberto() {
+		return ehAberto;
+	}
+
+	public void setEhAberto(boolean ehAberto) {
+		this.ehAberto = ehAberto;
+	}
+
 	@Override
 	public String toString() {
-		String retorno = super.toString();
-		return "Fundo [fundoId=" + fundoId + ", nomeFundo=" + nomeFundo + "] " + retorno;
+		return "Fundo [fundoId=" + fundoId + ", nomeFundo=" + nomeFundo + ", ehAberto=" + ehAberto + "]";
 	}
+	
+	
+	
+	
+	
 	
 	
 	
