@@ -23,7 +23,7 @@ public class FundoDAO implements GenericDAO<Fundo, Integer> {
 	@Override
 	public List<Fundo> listarTodos() throws DataBaseException {
 		System.out.println("FundoDAO - listarTodos - Fundo:");
-		DBTools.obterConexao();
+		DBTools.obterConexao(); 
 		
 		return listaFundos;
 	}
