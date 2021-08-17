@@ -48,7 +48,7 @@ public class AplicacaoBusiness {
 			
 			OperacaoPF operacaoPF = new OperacaoPF(fundoConsultado, investidorConsultado, valor, new Date());
 			operacaoDAO.cadastrar(operacaoPF);
-
+   
 			
 		} catch (DataBaseException e) {
 			
