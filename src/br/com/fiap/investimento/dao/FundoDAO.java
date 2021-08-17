@@ -25,7 +25,7 @@ public class FundoDAO implements GenericDAO<Fundo, Integer> {
 		System.out.println("FundoDAO - listarTodos - Fundo:");
 		DBTools.obterConexao(); 
 		
-		return listaFundos;
+		return listaFundos;  
 	}
 
 	@Override
